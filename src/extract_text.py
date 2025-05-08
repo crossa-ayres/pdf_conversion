@@ -124,21 +124,21 @@ if __name__ == "__main__":
             st.write("Keywords List:", keywords)
             st.write("Select the folder containing PDF files:")
         
-            if st.button("Brows for Document Folder"):
-                #app = wx.App(True)
-                #dialog = wx.DirDialog(None, 'Select a folder:', style=wx.DD_DEFAULT_STYLE | wx.DD_NEW_DIR_BUTTON)
-                #if dialog.ShowModal() == wx.ID_OK:
-                #pdf_searchable_folder = dialog.GetPath() # folder_path will contain the path of the folder you have selected as string
-                pdf_searchable_folder = st.text_input("Enter the folder path containing searchable PDF files:", None, key="pdf_searchable_folder")
-                st.write("Searchable Files Path:", pdf_searchable_folder)
-                pdf_searchable_files = glob(os.path.join(pdf_searchable_folder, '*.pdf'))
-                st.write("Files Found:", pdf_searchable_files)
-                st.write("Running Keyword Identification..")
-                output_path = pdf_searchable_folder
-                file_name = run_keyword_search(pdf_searchable_files,output_path, keywords)
-                st.write("Keywords Identified in :", file_name)
-                #app = wx.App(False)
-                #dialog.Destroy()
+            
+            #app = wx.App(True)
+            #dialog = wx.DirDialog(None, 'Select a folder:', style=wx.DD_DEFAULT_STYLE | wx.DD_NEW_DIR_BUTTON)
+            #if dialog.ShowModal() == wx.ID_OK:
+            #pdf_searchable_folder = dialog.GetPath() # folder_path will contain the path of the folder you have selected as string
+            pdf_searchable_folder = st.text_input("Enter the folder path containing searchable PDF files:", None, key="pdf_searchable_folder")
+            st.write("Searchable Files Path:", pdf_searchable_folder)
+            pdf_searchable_files = glob(os.path.join(pdf_searchable_folder, '*.pdf'))
+            st.write("Files Found:", pdf_searchable_files)
+            st.write("Running Keyword Identification..")
+            output_path = pdf_searchable_folder
+            file_name = run_keyword_search(pdf_searchable_files,output_path, keywords)
+            st.write("Keywords Identified in :", file_name)
+            #app = wx.App(False)
+            #dialog.Destroy()
                 
     
     
