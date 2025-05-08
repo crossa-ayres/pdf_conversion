@@ -12,7 +12,7 @@ import sys
 
 
 def extract_text_from_pdf(pdf_path, output_path):
-    pytesseract.pytesseract.tesseract_cmd = r"C:\Users\crossa\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+    pytesseract.pytesseract.tesseract_cmd = r"Tesseract-OCR\tesseract.exe"
     # Convert PDF to images
     images = convert_from_path(pdf_path)
     
